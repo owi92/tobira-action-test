@@ -67,16 +67,16 @@ jobs:
         cp -v util/dev-config/favicon.svg .deployment/files/
         cp -v util/dummy-login/dist/index.js .deployment/files/login-handler.js
 
-    - name: deploy tobira branch
-      working-directory: .deployment
-      env:
-        OPENCAST_ADMIN_PASSWORD: ${{ secrets.TOBIRA_OPENCAST_ADMIN_PASSWORD }}
-      run: >
-        ansible-playbook
-        --private-key=~/.ssh/id_ed25519
-        --extra-vars="deployid='${{ env.DEPLOY_ID }}'"
-        -u github
-        deploy.yml
+    # - name: deploy tobira branch
+    #   working-directory: .deployment
+    #   env:
+    #     OPENCAST_ADMIN_PASSWORD: ${{ secrets.TOBIRA_OPENCAST_ADMIN_PASSWORD }}
+    #   run: >
+    #     ansible-playbook
+    #     --private-key=~/.ssh/id_ed25519
+    #     --extra-vars="deployid='${{ env.DEPLOY_ID }}'"
+    #     -u github
+    #     deploy.yml
 
     - name: Set GitHub deployment status to "deployed"
       uses: bobheadxi/deployments@v1.3.0
