@@ -34,7 +34,7 @@ if (window.location.pathname === LoginRoute.url && redirectTo) {
 
 const initialRoute = matchInitialRoute();
 const root = document.createElement("div");
-root.style.height = "100svh";
+root.style.height = "50svh";
 document.body.appendChild(root);
 const reactRoot = ReactDOM.createRoot(root);
 reactRoot.render(<App initialRoute={initialRoute} />);
